@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cart_activity"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/greybg"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:cardCornerRadius="3dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/gradientbg"
+          android:orientation="vertical">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:weightSum="10"
+              >
+              <TextView
+                  android:id="@+id/cartName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text=""
+                  android:textColor="@color/WHite"
+                  android:layout_margin="8dp"
+                  android:textSize="20dp"
+                  android:textStyle="bold"
+                  android:layout_gravity="center"
+                  android:layout_weight="7"
+                  />
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="3"
+                  android:gravity="center"
+                  android:padding="10dp"
+                  >
+
+                  <Button
+                      android:id="@+id/edit"
+                      android:layout_width="60dp"
+                      android:layout_height="40dp"
+                      android:textColor="@color/WHite"
+                      android:text="edit"
+                      android:elevation="2dp"
+
+                      android:background="@drawable/add_button"
+                      />
+
+              </LinearLayout>
+
+          </LinearLayout>
+          <TextView
+
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="10dp"
+              android:layout_marginBottom="5dp"
+              android:text="Alamat:"
+              android:textStyle="bold"
+              android:textColor="@color/WHite"
+              />
+          <TextView
+              android:id="@+id/addresscart"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="10dp"
+              android:text=""
+              android:textColor="@color/WHite"
+              android:layout_marginBottom="10dp"
+
+              />
+      </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="10"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/card"
+
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:textStyle="bold"
+            android:text="Nama Produk"
+            android:textAlignment="textStart"
+            tools:ignore="RtlCompat"
+            android:layout_marginRight="2dp"
+            android:elevation="2dp"
+            android:background="@drawable/plus_minus_buttons"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Qty"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:elevation="2dp"
+            tools:ignore="RtlCompat"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/plus_minus_buttons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Harga"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat"
+            android:layout_marginRight="2dp"
+            android:elevation="2dp"
+            android:background="@drawable/plus_minus_buttons"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:elevation="2dp"
+            android:text="Total"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat"
+            android:background="@drawable/plus_minus_buttons"/>
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/cartlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constrainedHeight="true"
+
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/totallayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/totallayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/plus_minus_buttons"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:weightSum="10"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@id/order"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="Total"
+            android:textSize="20dp"
+            android:textAlignment="textStart"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/totalprice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textSize="20dp"
+            android:text="Rp. 0"
+            android:textAlignment="textEnd"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_button"
+        android:textColor="@color/WHite"
+        android:text="Confirm Order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="5dp"
+        android:onClick="Checkout"
+        android:elevation="2dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

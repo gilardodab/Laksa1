@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".admin_edit_item"
+    android:gravity="center"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/plus_minus_buttons"
+        >
+        <ImageView
+            android:id="@+id/editimage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginVertical="10dp"
+            android:padding="5dp"
+
+            />
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/editpicicon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:src="@drawable/ic_camera"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edittitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama dari item"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="Biaya - "
+        android:textSize="20dp"
+        android:textColor="@color/grey"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/costRs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Rp"
+            android:inputType="number"
+            android:layout_weight="4"
+
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="/"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="25dp"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/costUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Unit"
+            android:inputType="text"
+            android:layout_weight="4"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/alertitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/redalert"
+        android:visibility="gone"
+
+        />
+    <Button
+        android:id="@+id/saveitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/WHite"
+        android:text="Save"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/add_button"
+        />
+</LinearLayout>
